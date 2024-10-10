@@ -10,26 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Functions.tpp"
+#include "Iter.hpp"
 
-int main( void )
+
+
+int main(void)
 {
+	int	i = 1;
+	int	a[4] = {1, 2, 3, 4};
 
-	int a = 2;
-	int b = 3;
+	std::cout << "array: {" << a[0];
+	while (i < 4)
+	{
+		std::cout << " ," << a[i];
+		i++; 
+	}
+	std::cout << "}" << std::endl;
+	iter(a, 4, print);
 
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
+	std::cout << "**************************" << std::endl;
 
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	
+	std::string b[3] = {"That ", "is ", "all"};
+	std::cout << b[0] << b[1] << b[2] << std::endl;
+	iter(b, 3, print);
+
 	return 0;
 }

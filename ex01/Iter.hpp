@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Iter.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: proche-c <proche-c@student.42barcelona.co  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,25 +11,22 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Functions.tpp"
 
-int main( void )
+template< typename T >
+void	iter(T * a, int size, void(*f)(T const &))
 {
+	int	i;
 
-	int a = 2;
-	int b = 3;
+	i = 0;
+	while(i < size)
+	{
+		f(a[i]);
+		i++;
+	}
+}
 
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	
-	return 0;
+template< typename T >
+void	print(T const & content)
+{
+	std::cout << content << std::endl;
 }
