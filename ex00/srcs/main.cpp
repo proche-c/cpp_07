@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Functions.tpp"
+#include "Functions.hpp"
 
 int main( void )
 {
