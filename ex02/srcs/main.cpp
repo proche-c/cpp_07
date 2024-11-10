@@ -40,6 +40,22 @@ int main(void)
 	setValue(a1, 17, 2);
 	std::cout << "TRY OUT OF RANGE EXCEPTION" << std::endl;
 	setValue(a1, 17, 3);
+	try
+	{
+		std::cout << a1[-2] << std::endl;
+	}
+	catch(const Array<int>::OutOfRangeException& oor)
+	{
+		std::cout << "Error: " << oor.what() << std::endl;
+	}
+	try
+	{
+		std::cout << a1[5] << std::endl;
+	}
+	catch(const Array<int>::OutOfRangeException& oor)
+	{
+		std::cout << "Error: " << oor.what() << std::endl;
+	}
 	std::cout << "a1: " << a1 << std::endl;
 	std::cout << "size a1: " << a1.size() << std::endl;
 	Array<float>	af1(3);

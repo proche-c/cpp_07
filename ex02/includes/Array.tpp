@@ -66,7 +66,7 @@ Array<T>	& Array<T>::operator=(Array<T> const & src)
 template< typename T >
 T			& Array<T>::operator[](unsigned int i) const
 {
-	if (i >= this->size())
+	if (i < 0 || i >= this->size())
 		throw Array<T>::OutOfRangeException();
 	return (this->_tab[i]);
 }

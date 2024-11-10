@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <exception>
 
 template< typename T >
 void	iter(T * a, int size, void(*f)(T const &))
@@ -20,7 +21,14 @@ void	iter(T * a, int size, void(*f)(T const &))
 	i = 0;
 	while(i < size)
 	{
-		f(a[i]);
+		try
+		{
+			f(a[i]);
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << "Error: out of range" << std::endl;
+		}
 		i++;
 	}
 }
