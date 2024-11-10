@@ -30,6 +30,7 @@ int main(void)
 	std::cout << "INIT AN EMPTY ARRAY" << std::endl;
 	Array<int>	a0;
 	std::cout << "a0: " << a0 << std::endl;
+	std::cout << "size a0: " << a0.size() << std::endl;
 	Array<float>	af0;
 	std::cout << "af0: " << af0 << std::endl;
 	std::cout << "INIT A SIZE 3 ARRAY" << std::endl;
@@ -37,7 +38,10 @@ int main(void)
 	setValue(a1, 33, 0);
 	setValue(a1, 28, 1);
 	setValue(a1, 17, 2);
+	std::cout << "TRY OUT OF RANGE EXCEPTION" << std::endl;
+	setValue(a1, 17, 3);
 	std::cout << "a1: " << a1 << std::endl;
+	std::cout << "size a1: " << a1.size() << std::endl;
 	Array<float>	af1(3);
 	setValue(af1, 14.2f, 0);
 	setValue(af1, 0.56f, 1);

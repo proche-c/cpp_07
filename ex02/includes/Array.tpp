@@ -66,15 +66,8 @@ Array<T>	& Array<T>::operator=(Array<T> const & src)
 template< typename T >
 T			& Array<T>::operator[](unsigned int i) const
 {
-	try
-	{
-		if (i >= this->size())
-			throw Array<T>::OutOfRangeException();
-	}
-	catch(const Array<T>::OutOfRangeException& oor)
-	{
-		std::cout << "Error: " << oor.what() << '\n';
-	}
+	if (i >= this->size())
+		throw Array<T>::OutOfRangeException();
 	return (this->_tab[i]);
 }
 
